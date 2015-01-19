@@ -9,19 +9,34 @@
            fetch=".."
            review="review.cyanogenmod.org" />
 
+  <remote  name="gh"
+           fetch="https://github.com/" />
+
+  <remote  name="IR"
+           fetch="git://github.com/InSaNiTy-Rom" />
+
+  <remote  name="tm"
+           fetch="git://github.com/TheMuppets/" />
+
+  <remote  name="cm"
+           fetch="git://github.com/CyanogenMod" />
+
+  <remote  name="sr"
+           fetch="git://github.com/SlimRoms" />
+
   <remote  name="private"
            fetch="ssh://git@github.com" />
 
   <default revision="refs/heads/cm-12.0"
            remote="github"
            sync-c="true"
-           sync-j="4" />
+           sync-j="8" />
 
-  <project path="build" name="CyanogenMod/android_build" groups="pdk,tradefed" >
+  <project path="build" name="android_build" groups="pdk,tradefed" remote="IR" revision="LP" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
-  <project path="android" name="CyanogenMod/android" />
+  <project path="platform_manifest" name="InSaNiTy-Rom/platform_manifest" remote="IR" revision="LP" />
 
   <project path="abi/cpp" name="CyanogenMod/android_abi_cpp" groups="pdk" />
   <project path="art" name="CyanogenMod/android_art" groups="pdk" />
@@ -329,7 +344,7 @@
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk-cw-fs" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="frameworks/av" name="CyanogenMod/android_frameworks_av" groups="pdk" />
-  <project path="frameworks/base" name="CyanogenMod/android_frameworks_base" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="IR" revision="LP" />
   <project path="frameworks/compile/libbcc" name="CyanogenMod/android_frameworks_compile_libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="CyanogenMod/android_frameworks_compile_mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="CyanogenMod/android_frameworks_compile_slang" groups="pdk" />
@@ -443,7 +458,7 @@
   <project path="packages/apps/PackageInstaller" name="CyanogenMod/android_packages_apps_PackageInstaller" />
   <project path="packages/apps/PhoneCommon" name="CyanogenMod/android_packages_apps_PhoneCommon" />
   <project path="packages/apps/Provision" name="CyanogenMod/android_packages_apps_Provision" />
-  <project path="packages/apps/Settings" name="CyanogenMod/android_packages_apps_Settings" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="IR" revision="LP" />
   <project path="packages/apps/SmartCardService" name="CyanogenMod/android_packages_apps_SmartCardService" />
   <project path="packages/apps/SoundRecorder" name="CyanogenMod/android_packages_apps_SoundRecorder" />
   <project path="packages/apps/SpeechRecorder" name="CyanogenMod/android_packages_apps_SpeechRecorder" />
@@ -515,7 +530,6 @@
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8" groups="pdk,linux,arm" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,linux,arm" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" groups="pdk,linux,arm" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" groups="pdk,linux,arm" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" groups="pdk,linux" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" groups="pdk,linux" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
@@ -556,5 +570,18 @@
   <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="tools/studio/translation" name="platform/tools/studio/translation" groups="notdefault,tools" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
-  <project path="vendor/cm" name="CyanogenMod/android_vendor_cm" />
+  <project path="vendor/cm" name="android_vendor_InSaNiTy" remote="IR" revision="LP" />
+
+<!-- SaberMod Platform Toolchains -->
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" name="UBERUTILS/arm-linux-androideabi-4.8" remote="gh" revision="lp" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="UBERUTILS/arm-linux-androideabi-4.9" remote="gh" revision="lp" />
+
+<!-- SaberMod Kernel Toolchains -->
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.7-linaro" name="UBERUTILS/LINARO-OTTER" remote="gh" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8-linaro" name="UBERUTILS/linaro-arm-eabi-4.8" remote="gh" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.7-sm" name="UBERUTILS/arm-eabi-4.7" remote="gh" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8-sm" name="UBERUTILS/arm-eabi-4.8" remote="gh" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-sm" name="UBERUTILS/arm-eabi-4.9" remote="gh" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.10-sm" name="UBERUTILS/arm-eabi-4.10" remote="gh" revision="master" />
+
 </manifest>
