@@ -570,7 +570,7 @@
   <project path="tools/studio/cloud" name="platform/tools/studio/cloud" groups="notdefault,tools" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="tools/studio/translation" name="platform/tools/studio/translation" groups="notdefault,tools" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" remote="aosp" revision="refs/tags/android-5.0.2_r1" />
-  <project path="vendor/cm" name="android_vendor_InSaNiTy" remote="IR" revision="LP" />
+  <project path="vendor/InSaNiTy" name="android_vendor_InSaNiTy" remote="IR" revision="LP" />
 
 <!-- SaberMod Platform Toolchains -->
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" name="SaberMod/arm-androideabi-4.8" remote="gh" revision="master" />
