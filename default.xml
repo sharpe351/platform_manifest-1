@@ -36,7 +36,7 @@
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
-  <project path="platform_manifest" name="InSaNiTy-Rom/platform_manifest" remote="IR" revision="LP" />
+  <project path="platform_manifest" name="platform_manifest" remote="IR" revision="LP" />
 
   <project path="abi/cpp" name="CyanogenMod/android_abi_cpp" groups="pdk" />
   <project path="art" name="CyanogenMod/android_art" groups="pdk" />
