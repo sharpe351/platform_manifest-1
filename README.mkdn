@@ -1,3 +1,6 @@
+
+To init this repo:
+
     repo init -u git://github.com/InSaNiTy-Rom/platform_manifest.git -b LP
 
 Then to sync up:
